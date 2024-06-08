@@ -1,8 +1,9 @@
-import { Route, RouterProvider, createBrowserRouter } from "react-router-dom";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { Home } from "./components/Home";
 import { Products } from "./components/Products";
 import { RootLayout } from "./components/RootLayout";
 import { ErrorPage } from "./components/ErrorPage";
+import { ProductDetails } from "./components/ProductDetails";
 
 // * Another way of creating route definitions instead of object way.
 // const routeObject = createRoutesFromElements(
@@ -20,7 +21,8 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       { path: "/", element: <Home /> },
-      { path: "/products", element: <Products />  },
+      { path: "/products", element: <Products /> },
+      {path: "/products/:productId", element: <ProductDetails />}
     ],
   },
 ]);
